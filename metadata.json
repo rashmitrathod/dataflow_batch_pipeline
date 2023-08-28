@@ -1,0 +1,276 @@
+{
+  "name": "Kafka to BigQuery",
+  "description": "An Apache Beam streaming pipeline that reads JSON encoded messages from Apache Kafka and writes them into a BigQuery table.",
+  "parameters": [
+    {
+      "name": "inputTopics",
+      "label": "Kafka input topic.",
+      "helpText": "Apache Kafka topic to read from.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.~a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "bootstrapServers",
+      "label": "Kafka bootstrap server",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[a-zA-Z0-9._\\-:,~]+"
+      ]
+    },
+	 {
+      "name": "projectID",
+      "label": "projectID ",
+      "helpText": "projectID",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "jsonSchema",
+      "label": "jsonSchema ",
+      "helpText": "jsonSchema",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "outputTable",
+      "label": "output Table",
+      "helpText": "Big query output table",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "isEnableSSL",
+      "label": "is Enable SSL",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "keystorePath",
+      "label": "keystore Path",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "keystorePassword",
+      "label": "keystore Password",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "truststorePath",
+      "label": "truststore Path",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "truststorePassword",
+      "label": "truststore Password",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "keystoreObjName",
+      "label": "keystore Obj Name",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "truststoreObjName",
+      "label": "truststore Obj Name",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "bucketName",
+      "label": "bucket Name",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "errorSpec",
+      "label": "errorSpec",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "errorJsonSchema",
+      "label": "ErrorJsonSchema",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "ccnName",
+      "label": "ccnName",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "sourceSystemName",
+      "label": "sourceSystemName",
+      "helpText": "Source system name",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "serviceAccountEmail",
+      "label": "serviceAccountEmail",
+      "helpText": "serviceAccount for dataflow",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "consumerGroupID",
+      "label": "consumerGroupID",
+      "helpText": "Kafka consumer group ID",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "consumerAutoResetConfig",
+      "label": "consumerAutoResetConfig",
+      "helpText": " Auto reset config can be either latest oe earliest",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "windowSize",
+      "label": "windowSize",
+      "helpText": "Window Size for filtering the kafka msgs",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "columnName",
+      "label": "columnName",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "isForSingleColumn",
+      "label": "isForSingleColumn",
+      "helpText": "Apache Kafka bootstrap server in the form 'hostname:port'.",
+      "is_optional": true,
+      "regexes": [
+        "[-_.:@a-zA-Z0-9]+"
+      ]
+    },
+    	{
+      "name": "output",
+      "label": "output",
+      "helpText": "output file location",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "configFilePath",
+      "label": "configFilePath",
+      "helpText": "Config file path",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "kafkaToGCSPath",
+      "label": "kafkaToGCSPath",
+      "helpText": "raw json messages output file location",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "eventTableName",
+      "label": "eventTableName",
+      "helpText": "event table name for the profile hub",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "sourceFilePath",
+      "label": "sourceFilePath",
+      "helpText": "Source CSV file path",
+      "is_optional": true,
+      "regexes": [
+        "[-_./:a-zA-Z0-9]+"
+      ]
+    },
+	{
+      "name": "csvHeaders",
+      "label": "csvHeaders",
+      "helpText": "Header column names present in CSV",
+      "is_optional": true,
+      "regexes": [
+        "[-_.,~/:a-zA-Z0-9]+"
+      ]
+    },
+    {
+      "name": "sourceName",
+      "label": "sourceName",
+      "helpText": "source name present in CSV",
+      "is_optional": true,
+      "regexes": [
+        "[-_.,~/:a-zA-Z0-9]+"
+      ]
+    }
+  ]
+} 
